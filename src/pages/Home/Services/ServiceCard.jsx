@@ -7,8 +7,8 @@ const ServiceCard = ({service}) => {
     const {title, price, img} = service;
 
     return (
-        <div className='card w-96'>
-            <div className=' px-4 py-2 border  rounded-xl'>
+        <div className='card  flex justify-center items-center'>
+            <div className=' px-4 py-2  border  rounded-xl'>
             <img className='rounded-xl h-56' src={img} alt="" />
             <h1 className='text-3xl text-black'>{title}</h1>
             <div className='flex justify-between items-center mt-2'>

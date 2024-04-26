@@ -1,0 +1,40 @@
+[
+  {
+    "id":5,
+    "name": "Car Phone Holder",
+    "image": "https://i.ibb.co/2NMf7C4/716t-H1x-Grd-L-AC-SL1500.jpg",
+    "price": 14.99
+  },
+    {
+      "id":1,
+      "name": "SUV Car Cover",
+      "image": "https://i.ibb.co/wcX4dwS/190-T-Car-Cover-SUV-Protection-Waterproof-All-Weather-Weatherproof-UV-Sun-Snow-Dust-Storm-Resistant.webp",
+      "price": 49.99
+    },
+    {
+      "id":2,
+      "name": "Car Wax Polish",
+      "image": "https://i.ibb.co/nPNyHgg/wax-car-0a42ec4bd0.jpg",
+      "price": 19.99
+    },
+    {
+      "id":3,
+      "name": "Car Seat Covers",
+      "image": "https://i.ibb.co/sqcJBWK/71rso-RX3y-LL-AC-SL1500.jpg",
+      "price": 39.99
+    },
+    {
+      "id":4,
+      "name": "Car Floor Mats",
+      "image": "https://i.ibb.co/Bywcg2w/71v-Ub-Lbb80-L-AC-SL1488-1.jpg",
+      "price": 29.99
+    },
+    
+    {
+      "id":6,
+      "name": "Car Air Freshener",
+      "image": "https://i.ibb.co/VDZLNDb/71-S-yomid1-L-AC-SL1500.jpg",
+      "price": 9.99
+    }
+  ]
+  

@@ -2,15 +2,23 @@ import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
 import img from "./login.svg";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 
 const Login = () => {
-    
+    const {signIn} = useContext(AuthContext)
 const handleLogin = e =>{
   e.preventDefault();
   const email = e.target.email.value;
   const password = e.target.password.value;
   console.log(email,password)
+  signIn(email,password)
+  .then(user=>{
+    console.log(user)
+    
+  })
+  .catch(error=>console.log(error))
 }
 
   return (
@@ -60,23 +68,23 @@ const handleLogin = e =>{
             <div></div>
             <p className="text-black text-center">Or sing in With</p>
             <div className="flex justify-center gap-4">
-            <button className="text-2xl">
-              
-              <FcGoogle />
-            </button>
-            <button className="text-2xl text-blue-600">
-              
-            <FaFacebook />
-            </button>
+              <button className="text-2xl">
+                <FcGoogle />
+              </button>
+              <button className="text-2xl text-blue-600">
+                <FaFacebook />
+              </button>
             </div>
             <div className="mt-3">
-              <p className="text-center text-black">New to car Doctor? <Link to="/signUp" className="text-[#FF3811] font-bold">Register</Link></p>
+              <p className="text-center text-black">
+                New to car Doctor? <Link to="/signUp" className="text-[#FF3811] font-bold">Register</Link>
+              </p>
             </div>
           </form>
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default Login;

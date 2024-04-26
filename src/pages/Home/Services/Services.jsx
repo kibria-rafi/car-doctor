@@ -10,7 +10,7 @@ const Services = () => {
         .then(data => setServices(data))
     },[])
     return (
-        <div>
+        <div className=" section flex flex-col items-center justify-center h-full">
             <div className="text-center">
                 <h3 className="text-xl font-bold text-[#FF3811] mb-3">Services</h3>
                 <h1 className="text-4xl font-bold text-black">Our Services Area</h1>
