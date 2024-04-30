@@ -17,28 +17,27 @@ const Features = () => {
         </p>
       </div>
       <div className="lg:flex gap-3 justify-between mt-10">
-      <div className="card card-body items-center text-center border-2 shadow-lg transition-all duration-300">
-  <img src={one} alt="" />
-  <p className="text-black font-bold">Expert Team</p>
-</div>
+        <div className="transform card card-body transition duration-300 hover:scale-105 hover:bg-[#FF3811] items-center text-center border-2 shadow-lg ">
+          <img src={one} alt="" />
+          <p className="text-black font-bold">Expert Team</p>
+        </div>
 
-
-        <div className="card card-body items-center text-center border-2 shadow-lg">
+        <div className="transform card card-body transition duration-300 hover:scale-105 hover:bg-[#FF3811] items-center text-center border-2 shadow-lg ">
           <img src={three} alt="" />
           <p className="text-black font-bold">Timely Delivery</p>
         </div>
 
-        <div className="card card-body items-center text-center border-2 shadow-lg">
+        <div className="transform card card-body transition duration-300 hover:scale-105 hover:bg-[#FF3811] items-center text-center border-2 shadow-lg ">
           <img src={four} alt="" />
           <p className="text-black font-bold">24/7 Support</p>
         </div>
 
-        <div className="card card-body items-center text-center border-2 shadow-lg">
+        <div className="transform card card-body transition duration-300 hover:scale-105 hover:bg-[#FF3811] items-center text-center border-2 shadow-lg ">
           <img src={five} alt="" />
           <p className="text-black font-bold">Best Equipment</p>
         </div>
 
-        <div className="card card-body items-center text-center border-2 shadow-lg">
+        <div className="transform card card-body transition duration-300 hover:scale-105 hover:bg-[#FF3811] items-center text-center border-2 shadow-lg ">
           <img src={two} alt="" />
           <p className="text-black font-bold ">100% Guranty</p>
         </div>
