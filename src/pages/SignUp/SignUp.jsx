@@ -6,7 +6,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 
 const SignUp = () => {
-  const [sucess,setSucess] = useState(null)
+  const [success,setSuccess] = useState(null)
   const { createUser } = useContext(AuthContext);
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -15,14 +15,12 @@ const SignUp = () => {
     console.log(email, password);
 
     createUser(email, password)
-      .then((result) => {
-        const user = result.user;
-        setSucess("User Created Successfully")
-        
-        console.log(user);
+      .then(user=>{
+        console.log(user)
+        setSuccess('User Created Successfully')
       })
-      .catch((error) => console.log(error));
-  };
+      .catch(error=>console.log(error))
+  }; // Move the closing bracket to the correct position
 
   return (
     <div className="hero min-h-screen ">
@@ -75,7 +73,7 @@ const SignUp = () => {
               <button className="btn bg-[#FF3811] text-white">Sign Up</button>
               
             </div>
-              <p className="text-[#FF3811]">{sucess}</p>
+              <p className="text-[#FF3811]">{success}</p>
            
             <p className="text-black text-center">Or sing in With</p>
             <div className="flex justify-center gap-4">

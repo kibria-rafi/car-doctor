@@ -3,10 +3,10 @@ import logo from "./logo.svg";
 import { useContext } from "react";
 import { AuthContext } from "../../../../Providers/AuthProvider";
 function Navbar() {
-  const {user,logOut} =useContext(AuthContext)
- const handleLogOut = ()=>{ 
-    logOut() 
-  }
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogOut = () => {
+    logOut();
+  };
   return (
     <div className="navbar w-full bg-white">
       <div className="navbar-start">
@@ -37,17 +37,22 @@ function Navbar() {
             <li>
               <NavLink to="/about">About</NavLink>
             </li>
+            {
+              user?.email ? <li>
+              <NavLink to="/about">About</NavLink>
+            </li> : null
+            }
             <li>
               <NavLink to="/services">Services</NavLink>
             </li>
             <li>
               <NavLink to="/contact">Contact</NavLink>
             </li>
-            {
-              user ? null : <li>
-              <NavLink to="/login">Login</NavLink>
-            </li>
-            }
+            {user ? null : (
+              <li>
+                <NavLink to="/login">Login</NavLink>
+              </li>
+            )}
             <li>
               <NavLink to="/signUp">Register</NavLink>
             </li>
@@ -80,6 +85,20 @@ function Navbar() {
         >
           About
         </NavLink>
+        {user?.email ? (
+          <NavLink
+            to="/bookings"
+            className={({ isActive, isPending }) =>
+              isPending
+                ? "pending"
+                : isActive
+                ? "text-orange-500"
+                : "text-black font-semibold"
+            }
+          >
+            My bookings
+          </NavLink>
+        ) : null}
         <NavLink
           to="/services"
           className={({ isActive, isPending }) =>
@@ -116,50 +135,51 @@ function Navbar() {
         >
           Contact
         </NavLink>
-        {
-          user? null: <NavLink
-          to="/login"
-          className={({ isActive, isPending }) =>
-            isPending
-              ? "pending"
-              : isActive
-              ? "text-orange-500"
-              : "text-black font-semibold"
-          }
-        >
-          Login
-        </NavLink>
-        }
-        {
-          user? null : <NavLink
-          to="/signUp"
-          className={({ isActive, isPending }) =>
-            isPending
-              ? "pending"
-              : isActive
-              ? "text-orange-500"
-              : "text-black font-semibold"
-          }
-        >
-          Register
-        </NavLink>
-        }
+        {user ? null : (
+          <NavLink
+            to="/login"
+            className={({ isActive, isPending }) =>
+              isPending
+                ? "pending"
+                : isActive
+                ? "text-orange-500"
+                : "text-black font-semibold"
+            }
+          >
+            Login
+          </NavLink>
+        )}
+        {user ? null : (
+          <NavLink
+            to="/signUp"
+            className={({ isActive, isPending }) =>
+              isPending
+                ? "pending"
+                : isActive
+                ? "text-orange-500"
+                : "text-black font-semibold"
+            }
+          >
+            Register
+          </NavLink>
+        )}
       </div>
       <div className="navbar-end flex gap-2">
-        {
-          user? <h1 className="text-black">{user.email}</h1>  : null
-        }
-        {
-          user?
-          <button onClick={handleLogOut}  className="text-black font-semibold border-2 border-orange-600 px-3 py-2 rounded-lg">
-          LogOut
-        </button> : <Link to="/login">
-        <button className="text-black font-semibold border-2 border-orange-600 px-3 py-2 rounded-lg">
-          Login
-        </button>
-        </Link>
-        }
-        
+        {user ? <h1 className="text-black">{user.email}</h1> : null}
+        {user ? (
+          <button
+            onClick={handleLogOut}
+            className="text-black font-semibold border-2 border-orange-600 px-3 py-2 rounded-lg"
+          >
+            LogOut
+          </button>
+        ) : (
+          <Link to="/login">
+            <button className="text-black font-semibold border-2 border-orange-600 px-3 py-2 rounded-lg">
+              Login
+            </button>
+          </Link>
+        )}
       </div>
     </div>
   );
