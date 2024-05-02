@@ -1,8 +1,8 @@
 
 
 
-const TableRow = ({booking,handleDelete}) => {
-    const {_id,customerName,date,email,img,price,service} =booking;
+const TableRow = ({booking,handleDelete,handleConfirm}) => {
+    const {_id,customerName,date,email,img,price,service,status} =booking;
     
     return (
         <div className="md:flex justify-between items-center">
@@ -11,7 +11,9 @@ const TableRow = ({booking,handleDelete}) => {
             <h1 className="font-bold text-black text-xl">{customerName}</h1>
             <h1 className="font-bold text-black">{email}</h1>
             <h3 className="text-black font-bold">{date}</h3>
-            <button>pending</button>
+            {
+                status === 'confirmed' ? <h1 className="text-green-500 font-bold">Confirmed</h1> : <button onClick={()=>handleConfirm(_id)} className="bg-green-500 px-5 py-3 text-white rounded-full">Confirm</button>
+            }
         </div>
     );
 };
